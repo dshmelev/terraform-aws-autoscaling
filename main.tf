@@ -24,11 +24,11 @@ module "launch_configuration" {
   root_block_device      = "${var.root_block_device}"
 }
 
-####################
-# Autoscaling Group
-####################
-module "autoscaling_group" {
-  source = "./modules/autoscaling_group"
+#######################
+# CloudFormation Stack
+#######################
+module "cloudformation_stack" {
+  source = "./modules/cloudformation_stack"
 
   name                 = "${var.asg_name}"
   launch_configuration = "${var.existing_launch_configuration != "" ? var.existing_launch_configuration : module.launch_configuration.this_launch_configuration_id}"
@@ -37,6 +37,8 @@ module "autoscaling_group" {
   max_size         = "${var.max_size}"
   min_size         = "${var.min_size}"
   desired_capacity = "${var.desired_capacity}"
+
+  max_batch_size = "${var.max_batch_size}"
 
   load_balancers            = ["${var.load_balancers}"]
   health_check_grace_period = "${var.health_check_grace_period}"

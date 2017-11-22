@@ -97,6 +97,11 @@ variable "desired_capacity" {
   description = "The number of Amazon EC2 instances that should be running in the group"
 }
 
+variable "max_batch_size" {
+  description = "Specifies the maximum number of instances that AWS CloudFormation updates"
+  default     = 1
+}
+
 variable "vpc_zone_identifier" {
   description = "A list of subnet IDs to launch resources in"
   type        = "list"

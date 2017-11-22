@@ -1,6 +1,8 @@
 AWS Auto Scaling Group (ASG) Terraform module
 ================================================
 
+**Note:** This module forked from terraform-aws-modules/terraform-aws-autoscaling; Replaced "aws_autoscaling_group" to "aws_cloudformation_stack" for allowing RollingUpdate https://github.com/hashicorp/terraform/issues/1552
+
 Terraform module which creates Auto Scaling resources on AWS.
 
 These types of resources are supported:

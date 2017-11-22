@@ -113,3 +113,16 @@ variable "protect_from_scale_in" {
   description = "Allows setting instance protection. The autoscaling group will not select instances with this setting for terminination during scale in events."
   default     = false
 }
+
+variable "max_batch_size" {
+  description = "Specifies the maximum number of instances that AWS CloudFormation updates"
+  default     = 1
+}
+
+variable "no_value" {
+  type = "map"
+
+  default = {
+    "Ref" = "AWS::NoValue"
+  }
+}
