@@ -102,6 +102,16 @@ variable "max_batch_size" {
   default     = 1
 }
 
+variable "pause_time" {
+  description = "The amount of time that AWS CloudFormation pauses after making a change to a batch of instances to give those instances time to start software applications."
+  default     = "PT0S"
+}
+
+variable "wait_on_resource_signals" {
+  description = "Specifies whether the Auto Scaling group waits on signals from new instances during an update."
+  default     = false
+}
+
 variable "vpc_zone_identifier" {
   description = "A list of subnet IDs to launch resources in"
   type        = "list"

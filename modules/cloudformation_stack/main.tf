@@ -57,8 +57,9 @@ resource "aws_cloudformation_stack" "autoscaling_group" {
       "UpdatePolicy": {
         "AutoScalingRollingUpdate": {
           "MinInstancesInService": "${var.min_size}",
-          "MaxBatchSize": "1",
-          "PauseTime": "PT0S"
+          "MaxBatchSize": "${var.max_batch_size}",
+          "PauseTime": "${var.pause_time}",
+          "WaitOnResourceSignals": ${var.wait_on_resource_signals ? true : false}
         }
       }
     }

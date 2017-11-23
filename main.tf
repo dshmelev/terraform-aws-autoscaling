@@ -39,6 +39,8 @@ module "cloudformation_stack" {
   desired_capacity = "${var.desired_capacity}"
 
   max_batch_size = "${var.max_batch_size}"
+  pause_time     = "${var.pause_time}"
+  wait_for_capacity_timeout = "${var.wait_for_capacity_timeout}"
 
   load_balancers            = ["${var.load_balancers}"]
   health_check_grace_period = "${var.health_check_grace_period}"
