@@ -1,7 +1,7 @@
 # Autoscaling group
 output "this_autoscaling_group_id" {
   description = "The autoscaling group id"
-  value       = "${aws_cloudformation_stack.autoscaling_group.outputs.AsgName}"
+  value       = "${aws_cloudformation_stack.autoscaling_group.outputs}"
 }
 
 output "this_autoscaling_group_name" {
